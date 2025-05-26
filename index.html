@@ -3,246 +3,296 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Murph - UrbanFit CrossFit Tirana</title>
-    
-    <!-- SEO and Social Media Meta Tags -->
-    <meta name="description" content="The Murph Hero WOD tracker - Train with Coach Vini at UrbanFit CrossFit Tirana. Track your progress through this legendary CrossFit workout.">
-    <meta name="keywords" content="CrossFit, Murph, WOD, UrbanFit, Tirana, Coach Vini, workout tracker">
-    <meta name="author" content="UrbanFit CrossFit Tirana">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="">
-    <meta property="og:title" content="The Murph - UrbanFit CrossFit Tirana">
-    <meta property="og:description" content="Track your Murph workout with Coach Vini at UrbanFit CrossFit Tirana">
-    <meta property="og:image" content="/og-image.jpg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="The Murph - UrbanFit CrossFit Tirana">
-    <meta property="twitter:description" content="Track your Murph workout with Coach Vini">
-    
+    <title>URBFIT - The Murph Challenge with Coach Vini</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#1a1a1a">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💪</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Prevent infinite height extension */
+        html, body {
+            max-height: 100vh;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        /* Ensure sections don't expand infinitely */
+        section {
+            max-width: 100vw;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
-    <div class="app-container">
-        <header class="hero-header">
-            <div class="gym-branding">
-                <div class="gym-logo">
-                    <span class="logo-text">URBANFIT</span>
-                    <span class="logo-subtitle">CROSSFIT TIRANA</span>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>URBFIT</h2>
+                <span>with Coach Vini</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#coach" class="nav-link">Coach Vini</a></li>
+                <li><a href="#challenge" class="nav-link">The Murph</a></li>
+                <li><a href="#progress" class="nav-link">Progress</a></li>
+                <li><a href="#community" class="nav-link">Community</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Fitness motivation" class="hero-image" onerror="this.src='https://via.placeholder.com/1920x1080/1a1a1a/ff6b35?text=URBFIT+Hero'">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Master The Murph Challenge</h1>
+            <p class="hero-subtitle">Train with Coach Vini and transform your fitness journey</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="startChallenge()">
+                    <i class="fas fa-play"></i> Start Challenge
+                </button>
+                <button class="btn btn-secondary" onclick="scrollToCoach()">
+                    <i class="fas fa-user"></i> Meet Coach Vini
+                </button>
+            </div>
+        </div>
+        <div class="scroll-indicator" onclick="scrollToCoach()">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Coach Vini Section -->
+    <section id="coach" class="coach-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Coach Vini</h2>
+                <p>Your expert guide to mastering The Murph Challenge</p>
+            </div>
+            <div class="coach-content">
+                <div class="coach-image">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Coach Vini" onerror="this.src='https://via.placeholder.com/400x400/1a1a1a/ff6b35?text=Coach+Vini'">
+                    <div class="coach-badge">
+                        <i class="fas fa-medal"></i>
+                        <span>Certified Trainer</span>
+                    </div>
                 </div>
                 <div class="coach-info">
-                    <span class="coach-label">Your Coach</span>
-                    <span class="coach-name">COACH VINI</span>
-                </div>
-            </div>
-            
-            <h1 class="hero-title">THE MURPH</h1>
-            <p class="hero-subtitle">Hero WOD - In honor of Navy Lieutenant Michael Murphy</p>
-            <div class="workout-summary">
-                <div class="summary-item">
-                    <span class="summary-icon">🏃</span>
-                    <span>1 Mile Run</span>
-                </div>
-                <div class="summary-item">
-                    <span class="summary-icon">💪</span>
-                    <span>100 Pull-ups</span>
-                </div>
-                <div class="summary-item">
-                    <span class="summary-icon">🔥</span>
-                    <span>200 Push-ups</span>
-                </div>
-                <div class="summary-item">
-                    <span class="summary-icon">⚡</span>
-                    <span>300 Air Squats</span>
-                </div>
-                <div class="summary-item">
-                    <span class="summary-icon">🏃</span>
-                    <span>1 Mile Run</span>
-                </div>
-            </div>
-        </header>
-
-        <main class="workout-container">
-            <div class="timer-section">
-                <div class="main-timer">
-                    <span id="totalTime">00:00:00</span>
-                </div>
-                <div class="timer-controls">
-                    <button id="startBtn" class="btn btn-primary">START WORKOUT</button>
-                    <button id="pauseBtn" class="btn btn-secondary" disabled>PAUSE</button>
-                    <button id="resetBtn" class="btn btn-danger">RESET</button>
-                </div>
-            </div>
-
-            <div class="progress-overview">
-                <div class="overall-progress">
-                    <div class="progress-bar">
-                        <div id="overallProgressFill" class="progress-fill"></div>
-                    </div>
-                    <span id="overallProgressText">0% Complete</span>
-                </div>
-            </div>
-
-            <div class="workout-phases">
-                <div class="phase-card" id="phase1">
-                    <div class="phase-header">
-                        <h3>Phase 1: Run</h3>
-                        <span class="phase-status">⏳</span>
-                    </div>
-                    <div class="phase-content">
-                        <div class="distance-tracker">
-                            <span>1 Mile</span>
-                            <button class="complete-btn" onclick="completePhase(1)">Complete</button>
+                    <h3>Vini Rodriguez</h3>
+                    <p class="coach-title">Elite Fitness Coach & Murph Specialist</p>
+                    <div class="coach-stats">
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Athletes Trained</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">95%</span>
+                            <span class="stat-label">Success Rate</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Years Experience</span>
                         </div>
                     </div>
-                </div>
-
-                <div class="phase-card" id="phase2">
-                    <div class="phase-header">
-                        <h3>Phase 2: Strength Circuit</h3>
-                        <span class="phase-status">⏳</span>
+                    <p class="coach-bio">
+                        With over 5 years of experience in functional fitness and CrossFit, Coach Vini specializes in helping athletes conquer The Murph Challenge. His proven methodology has helped hundreds achieve their fitness goals.
+                    </p>
+                    <div class="coach-social">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
                     </div>
-                    <div class="phase-content">
-                        <div class="exercise-tracker">
-                            <div class="exercise">
-                                <div class="exercise-header">
-                                    <span>Pull-ups</span>
-                                    <span id="pullupCount">0/100</span>
-                                </div>
-                                <div class="rep-controls">
-                                    <button onclick="subtractReps('pullups', 1)">-1</button>
-                                    <button onclick="addReps('pullups', 1)">+1</button>
-                                    <button onclick="addReps('pullups', 5)">+5</button>
-                                    <button onclick="addReps('pullups', 10)">+10</button>
-                                </div>
-                                <div class="progress-bar small">
-                                    <div id="pullupProgress" class="progress-fill"></div>
-                                </div>
-                            </div>
-
-                            <div class="exercise">
-                                <div class="exercise-header">
-                                    <span>Push-ups</span>
-                                    <span id="pushupCount">0/200</span>
-                                </div>
-                                <div class="rep-controls">
-                                    <button onclick="subtractReps('pushups', 1)">-1</button>
-                                    <button onclick="addReps('pushups', 1)">+1</button>
-                                    <button onclick="addReps('pushups', 5)">+5</button>
-                                    <button onclick="addReps('pushups', 10)">+10</button>
-                                </div>
-                                <div class="progress-bar small">
-                                    <div id="pushupProgress" class="progress-fill"></div>
-                                </div>
-                            </div>
-
-                            <div class="exercise">
-                                <div class="exercise-header">
-                                    <span>Air Squats</span>
-                                    <span id="squatCount">0/300</span>
-                                </div>
-                                <div class="rep-controls">
-                                    <button onclick="subtractReps('squats', 1)">-1</button>
-                                    <button onclick="addReps('squats', 1)">+1</button>
-                                    <button onclick="addReps('squats', 5)">+5</button>
-                                    <button onclick="addReps('squats', 10)">+10</button>
-                                </div>
-                                <div class="progress-bar small">
-                                    <div id="squatProgress" class="progress-fill"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="partition-helper">
-                            <h4>Suggested Partitions:</h4>
-                            <div class="partition-options">
-                                <button onclick="setPartition('cindy')" class="partition-btn">
-                                    "Cindy" Style<br>
-                                    <small>20 rounds: 5 pull-ups, 10 push-ups, 15 squats</small>
-                                </button>
-                                <button onclick="setPartition('quarter')" class="partition-btn">
-                                    Quarter Method<br>
-                                    <small>4 rounds: 25 pull-ups, 50 push-ups, 75 squats</small>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="phase-card" id="phase3">
-                    <div class="phase-header">
-                        <h3>Phase 3: Final Run</h3>
-                        <span class="phase-status">⏳</span>
-                    </div>
-                    <div class="phase-content">
-                        <div class="distance-tracker">
-                            <span>1 Mile</span>
-                            <button class="complete-btn" onclick="completePhase(3)">Complete</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="stats-section">
-                <div class="stat-card">
-                    <h4>Current Pace</h4>
-                    <span id="currentPace">--:--</span>
-                </div>
-                <div class="stat-card">
-                    <h4>Estimated Finish</h4>
-                    <span id="estimatedFinish">--:--</span>
-                </div>
-                <div class="stat-card">
-                    <h4>Rest Timer</h4>
-                    <div class="rest-timer">
-                        <span id="restTime">00:00</span>
-                        <button id="restBtn" onclick="startRestTimer()">Start Rest</button>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <div class="motivation-section">
-            <div class="quote-container">
-                <p id="motivationalQuote">"Courage is not the absence of fear, but action in spite of it."</p>
-                <small>- Michael Murphy</small>
-            </div>
-            <div class="coach-message">
-                <div class="coach-avatar">👨‍💼</div>
-                <div class="message-content">
-                    <p>"Push your limits! Every rep brings you closer to your goal. Let's crush this Murph together!"</p>
-                    <small>- Coach Vini, UrbanFit CrossFit Tirana</small>
                 </div>
             </div>
         </div>
+    </section>
 
-        <footer class="app-footer">
-            <div class="footer-content">
-                <div class="gym-contact">
-                    <h4>UrbanFit CrossFit Tirana</h4>
-                    <p>📍 Tirana, Albania</p>
-                    <p>💪 Train with the best at UrbanFit</p>
+    <!-- Challenge Section -->
+    <section id="challenge" class="challenge-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Murph Challenge</h2>
+                <p>Honor. Courage. Commitment.</p>
+            </div>
+            <div class="challenge-content">
+                <div class="challenge-info">
+                    <div class="challenge-card">
+                        <div class="challenge-header">
+                            <h3>Standard Murph</h3>
+                            <span class="difficulty">Intermediate</span>
+                        </div>
+                        <ul class="challenge-list">
+                            <li><i class="fas fa-running"></i> 1 Mile Run</li>
+                            <li><i class="fas fa-arrow-up"></i> 100 Pull-ups</li>
+                            <li><i class="fas fa-hand-paper"></i> 200 Push-ups</li>
+                            <li><i class="fas fa-angle-double-down"></i> 300 Air Squats</li>
+                            <li><i class="fas fa-running"></i> 1 Mile Run</li>
+                        </ul>
+                        <div class="challenge-time">
+                            <span>Target Time: 45-60 min</span>
+                        </div>
+                    </div>
+                    <div class="challenge-tips">
+                        <h4>Coach Vini's Pro Tips</h4>
+                        <div class="tips-grid">
+                            <div class="tip">
+                                <i class="fas fa-clock"></i>
+                                <span>Pace yourself on the first run</span>
+                            </div>
+                            <div class="tip">
+                                <i class="fas fa-sync-alt"></i>
+                                <span>Break exercises into manageable sets</span>
+                            </div>
+                            <div class="tip">
+                                <i class="fas fa-heartbeat"></i>
+                                <span>Monitor your heart rate</span>
+                            </div>
+                            <div class="tip">
+                                <i class="fas fa-water"></i>
+                                <span>Stay hydrated throughout</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="app-info">
-                    <p>Powered by UrbanFit Training App</p>
-                    <small>© 2024 UrbanFit CrossFit</small>
+                <div class="challenge-gallery">
+                    <h4>Training Gallery</h4>
+                    <div class="gallery-grid">
+                        <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pull-ups training" class="gallery-item" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/ff6b35?text=Pull-ups'">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Push-ups form" class="gallery-item" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/ff6b35?text=Push-ups'">
+                        <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Squats technique" class="gallery-item" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/ff6b35?text=Squats'">
+                        <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Running training" class="gallery-item" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/ff6b35?text=Running'">
+                    </div>
                 </div>
             </div>
-        </footer>
+        </div>
+    </section>
+
+    <!-- Progress Tracking -->
+    <section id="progress" class="progress-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Track Your Progress</h2>
+                <p>Monitor your improvement with Coach Vini's guidance</p>
+            </div>
+            <div class="progress-dashboard">
+                <div class="progress-card">
+                    <h3>Your Stats</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-value" id="totalWorkouts">0</span>
+                            <span class="stat-label">Workouts Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="bestTime">--:--</span>
+                            <span class="stat-label">Best Murph Time</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="currentStreak">0</span>
+                            <span class="stat-label">Day Streak</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="progress-chart">
+                    <h3>Progress Chart</h3>
+                    <canvas id="progressChart"></canvas>
+                </div>
+            </div>
+            <div class="workout-logger">
+                <h3>Log Today's Workout</h3>
+                <form class="workout-form" onsubmit="logWorkout(event)">
+                    <div class="form-group">
+                        <label for="workoutTime">Completion Time (minutes)</label>
+                        <input type="number" id="workoutTime" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="difficulty">Difficulty</label>
+                        <select id="difficulty" required>
+                            <option value="rx">RX (Full Murph)</option>
+                            <option value="scaled">Scaled</option>
+                            <option value="half">Half Murph</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Notes</label>
+                        <textarea id="notes" placeholder="How did you feel? Any challenges?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Log Workout</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="community-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>URBFIT Community</h2>
+                <p>Connect with fellow athletes and Coach Vini</p>
+            </div>
+            <div class="community-content">
+                <div class="leaderboard">
+                    <h3><i class="fas fa-trophy"></i> Weekly Leaderboard</h3>
+                    <div class="leaderboard-list" id="leaderboard">
+                        <!-- Leaderboard items will be populated by JavaScript -->
+                    </div>
+                </div>
+                <div class="community-feed">
+                    <h3><i class="fas fa-comments"></i> Recent Activity</h3>
+                    <div class="feed-item">
+                        <img src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Athlete" class="feed-avatar" onerror="this.src='https://via.placeholder.com/100x100/1a1a1a/ff6b35?text=User'">
+                        <div class="feed-content">
+                            <p><strong>Mike Johnson</strong> just completed Murph in 42:30!</p>
+                            <span class="feed-time">2 hours ago</span>
+                        </div>
+                    </div>
+                    <div class="feed-item coach-post">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Coach Vini" class="feed-avatar" onerror="this.src='https://via.placeholder.com/100x100/1a1a1a/ff6b35?text=Vini'">
+                        <div class="feed-content">
+                            <p><strong>Coach Vini</strong> posted: "Remember, it's not about being perfect, it's about being consistent. Every rep counts!"</p>
+                            <span class="feed-time">5 hours ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timer Modal -->
+    <div id="timerModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Murph Timer</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="timer-display">
+                <div class="time" id="timerDisplay">00:00:00</div>
+                <div class="timer-controls">
+                    <button class="btn btn-success" id="startBtn" onclick="startTimer()">
+                        <i class="fas fa-play"></i> Start
+                    </button>
+                    <button class="btn btn-warning" id="pauseBtn" onclick="pauseTimer()" style="display: none;">
+                        <i class="fas fa-pause"></i> Pause
+                    </button>
+                    <button class="btn btn-danger" id="resetBtn" onclick="resetTimer()">
+                        <i class="fas fa-stop"></i> Reset
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <audio id="completeSound" preload="auto">
-        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmccBjuPzfDBeSsFJm3C7+CVTQIKP5zbpXkjBT1+wuvDciUFMIfA4+x2PwsOc7fp6LRoGAU9dCUFU8vR7u5IFAhJe9Pzw3YmBSJjutnkpGARAx9HO6vdm3srByVmvODjnF4PBi5e4ebkqGMRAhxVq9ySUgcJV4zW1N+hSQ0L" type="audio/wav">
-    </audio>
-
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>
