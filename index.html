@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Murph - UrbanFit CrossFit Tirana</title>
+    
+    <!-- SEO and Social Media Meta Tags -->
+    <meta name="description" content="The Murph Hero WOD tracker - Train with Coach Vini at UrbanFit CrossFit Tirana. Track your progress through this legendary CrossFit workout.">
+    <meta name="keywords" content="CrossFit, Murph, WOD, UrbanFit, Tirana, Coach Vini, workout tracker">
+    <meta name="author" content="UrbanFit CrossFit Tirana">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="The Murph - UrbanFit CrossFit Tirana">
+    <meta property="og:description" content="Track your Murph workout with Coach Vini at UrbanFit CrossFit Tirana">
+    <meta property="og:image" content="/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="The Murph - UrbanFit CrossFit Tirana">
+    <meta property="twitter:description" content="Track your Murph workout with Coach Vini">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a1a1a">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💪</text></svg>">
+</head>
+<body>
+    <div class="app-container">
+        <header class="hero-header">
+            <div class="gym-branding">
+                <div class="gym-logo">
+                    <span class="logo-text">URBANFIT</span>
+                    <span class="logo-subtitle">CROSSFIT TIRANA</span>
+                </div>
+                <div class="coach-info">
+                    <span class="coach-label">Your Coach</span>
+                    <span class="coach-name">COACH VINI</span>
+                </div>
+            </div>
+            
+            <h1 class="hero-title">THE MURPH</h1>
+            <p class="hero-subtitle">Hero WOD - In honor of Navy Lieutenant Michael Murphy</p>
+            <div class="workout-summary">
+                <div class="summary-item">
+                    <span class="summary-icon">🏃</span>
+                    <span>1 Mile Run</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-icon">💪</span>
+                    <span>100 Pull-ups</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-icon">🔥</span>
+                    <span>200 Push-ups</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-icon">⚡</span>
+                    <span>300 Air Squats</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-icon">🏃</span>
+                    <span>1 Mile Run</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="workout-container">
+            <div class="timer-section">
+                <div class="main-timer">
+                    <span id="totalTime">00:00:00</span>
+                </div>
+                <div class="timer-controls">
+                    <button id="startBtn" class="btn btn-primary">START WORKOUT</button>
+                    <button id="pauseBtn" class="btn btn-secondary" disabled>PAUSE</button>
+                    <button id="resetBtn" class="btn btn-danger">RESET</button>
+                </div>
+            </div>
+
+            <div class="progress-overview">
+                <div class="overall-progress">
+                    <div class="progress-bar">
+                        <div id="overallProgressFill" class="progress-fill"></div>
+                    </div>
+                    <span id="overallProgressText">0% Complete</span>
+                </div>
+            </div>
+
+            <div class="workout-phases">
+                <div class="phase-card" id="phase1">
+                    <div class="phase-header">
+                        <h3>Phase 1: Run</h3>
+                        <span class="phase-status">⏳</span>
+                    </div>
+                    <div class="phase-content">
+                        <div class="distance-tracker">
+                            <span>1 Mile</span>
+                            <button class="complete-btn" onclick="completePhase(1)">Complete</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="phase-card" id="phase2">
+                    <div class="phase-header">
+                        <h3>Phase 2: Strength Circuit</h3>
+                        <span class="phase-status">⏳</span>
+                    </div>
+                    <div class="phase-content">
+                        <div class="exercise-tracker">
+                            <div class="exercise">
+                                <div class="exercise-header">
+                                    <span>Pull-ups</span>
+                                    <span id="pullupCount">0/100</span>
+                                </div>
+                                <div class="rep-controls">
+                                    <button onclick="subtractReps('pullups', 1)">-1</button>
+                                    <button onclick="addReps('pullups', 1)">+1</button>
+                                    <button onclick="addReps('pullups', 5)">+5</button>
+                                    <button onclick="addReps('pullups', 10)">+10</button>
+                                </div>
+                                <div class="progress-bar small">
+                                    <div id="pullupProgress" class="progress-fill"></div>
+                                </div>
+                            </div>
+
+                            <div class="exercise">
+                                <div class="exercise-header">
+                                    <span>Push-ups</span>
+                                    <span id="pushupCount">0/200</span>
+                                </div>
+                                <div class="rep-controls">
+                                    <button onclick="subtractReps('pushups', 1)">-1</button>
+                                    <button onclick="addReps('pushups', 1)">+1</button>
+                                    <button onclick="addReps('pushups', 5)">+5</button>
+                                    <button onclick="addReps('pushups', 10)">+10</button>
+                                </div>
+                                <div class="progress-bar small">
+                                    <div id="pushupProgress" class="progress-fill"></div>
+                                </div>
+                            </div>
+
+                            <div class="exercise">
+                                <div class="exercise-header">
+                                    <span>Air Squats</span>
+                                    <span id="squatCount">0/300</span>
+                                </div>
+                                <div class="rep-controls">
+                                    <button onclick="subtractReps('squats', 1)">-1</button>
+                                    <button onclick="addReps('squats', 1)">+1</button>
+                                    <button onclick="addReps('squats', 5)">+5</button>
+                                    <button onclick="addReps('squats', 10)">+10</button>
+                                </div>
+                                <div class="progress-bar small">
+                                    <div id="squatProgress" class="progress-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="partition-helper">
+                            <h4>Suggested Partitions:</h4>
+                            <div class="partition-options">
+                                <button onclick="setPartition('cindy')" class="partition-btn">
+                                    "Cindy" Style<br>
+                                    <small>20 rounds: 5 pull-ups, 10 push-ups, 15 squats</small>
+                                </button>
+                                <button onclick="setPartition('quarter')" class="partition-btn">
+                                    Quarter Method<br>
+                                    <small>4 rounds: 25 pull-ups, 50 push-ups, 75 squats</small>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="phase-card" id="phase3">
+                    <div class="phase-header">
+                        <h3>Phase 3: Final Run</h3>
+                        <span class="phase-status">⏳</span>
+                    </div>
+                    <div class="phase-content">
+                        <div class="distance-tracker">
+                            <span>1 Mile</span>
+                            <button class="complete-btn" onclick="completePhase(3)">Complete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-section">
+                <div class="stat-card">
+                    <h4>Current Pace</h4>
+                    <span id="currentPace">--:--</span>
+                </div>
+                <div class="stat-card">
+                    <h4>Estimated Finish</h4>
+                    <span id="estimatedFinish">--:--</span>
+                </div>
+                <div class="stat-card">
+                    <h4>Rest Timer</h4>
+                    <div class="rest-timer">
+                        <span id="restTime">00:00</span>
+                        <button id="restBtn" onclick="startRestTimer()">Start Rest</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div class="motivation-section">
+            <div class="quote-container">
+                <p id="motivationalQuote">"Courage is not the absence of fear, but action in spite of it."</p>
+                <small>- Michael Murphy</small>
+            </div>
+            <div class="coach-message">
+                <div class="coach-avatar">👨‍💼</div>
+                <div class="message-content">
+                    <p>"Push your limits! Every rep brings you closer to your goal. Let's crush this Murph together!"</p>
+                    <small>- Coach Vini, UrbanFit CrossFit Tirana</small>
+                </div>
+            </div>
+        </div>
+
+        <footer class="app-footer">
+            <div class="footer-content">
+                <div class="gym-contact">
+                    <h4>UrbanFit CrossFit Tirana</h4>
+                    <p>📍 Tirana, Albania</p>
+                    <p>💪 Train with the best at UrbanFit</p>
+                </div>
+                <div class="app-info">
+                    <p>Powered by UrbanFit Training App</p>
+                    <small>© 2024 UrbanFit CrossFit</small>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <audio id="completeSound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmccBjuPzfDBeSsFJm3C7+CVTQIKP5zbpXkjBT1+wuvDciUFMIfA4+x2PwsOc7fp6LRoGAU9dCUFU8vR7u5IFAhJe9Pzw3YmBSJjutnkpGARAx9HO6vdm3srByVmvODjnF4PBi5e4ebkqGMRAhxVq9ySUgcJV4zW1N+hSQ0L" type="audio/wav">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
